@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts\MovieTicketNFTSwap.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> MovieTicketNFTSwap.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>35/35</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">94.44% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>17/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>12/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>38/38</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+&nbsp;
+// specifies solidity version required
+pragma solidity ^0.8.13;
+&nbsp;
+// @dev import dependencies
+import "./ERC721.sol";
+&nbsp;
+/** @title Module 8: Final Coding Assignment */
+/// @author Manvinderjit Rupal
+/// @notice The contract allows two NFT movie tickets of different properties or values to be swapped with ether exchange.
+///         They are based on ERC721 standard with the OpenZepplin one being used in the contract
+&nbsp;
+/// @dev MovieTicketNFTSwap contract definition starts here
+contract MovieTicketNFTSwap is ERC721 {
+    
+    /// @dev state variable declaration
+    ///      movieTitles mapping stores the titles of movies to an integer index
+    ///      movieTicketPrices mapping stores the corresponding prices of movies to an integer index
+    ///      userEtherBalances mapping stores the amount of ether owed to each user address
+    ///      counterTicketId parameter is used as an index for each minted ticket
+    mapping(uint256 =&gt; string) public movieTitles;
+    mapping(uint256 =&gt; uint256) public movieTicketPrices;    
+    mapping(address =&gt; uint256) userEtherBalances;
+    uint256 counterTicketId = 1;
+    ///      Information for each movie ticket is stored as a custom struct
+    struct MovieTicket {
+        uint256 ticketId;                   /// index of each ticket, is unique
+        string movieTitle;                  /// title of movie
+        uint256 ticketPriceInWei;           /// price in Wei paid for ticket
+        address ticketOwner;                /// owner address for the ticket
+        uint256 validTillBlock;             /// the block till which the ticket is valid, used instead of block.timestamp
+        bool isSwappable;                   /// stores if the ticket is swappable or not, default is false 
+    }   
+    ///      movieTickets array is of MovieTicket type and stores the information of movies tickets
+    MovieTicket[] public movieTickets;
+&nbsp;
+    /// @dev event declaration
+    event BoughtTickets(address, uint256);                      // Emitted when ticket bought successfully
+    event SwappedTickets(address, uint256, address, uint256);   // Emitted when ticket swapped successfully
+    event WithdrawBalance(address, uint256);                    // Emitted when funds withdrawn successfully
+&nbsp;
+    ///@dev constructor initialization
+    constructor() payable ERC721("MovieTicket", "MTKT") {                          
+        movieTitles[1] = "Avengers";                            // Name for first movie initialized as Avengers
+        movieTitles[2] = "Starwars";                            // Name for second movie initialized asStarwars
+        movieTicketPrices[1] = 1000000000000000000;             // Ticket price for Avengers, = 1e18 = 1 ether
+        movieTicketPrices[2] = 2000000000000000000;             // Ticket price for Starwars  = 2e18 = 2 ether
+    }
+&nbsp;
+    /// @dev checkTicketValidity modifier ensures that the ticket is valid for at least two more blocks
+    /// @param _ticketId Denotes the index of the movie ticket NFT to be checked for validity
+    /// @notice ensures that the movie ticket is valid, not expired
+    modifier checkTicketValidity (uint256 _ticketId) {
+        require(movieTickets[_ticketId-1].validTillBlock &gt; block.number + 2, "Expired or about to expire tickets can not be swapped");
+        _;
+    }
+&nbsp;
+    /// @dev checkSwappabilityOfTickets modifier implements the design choice: a movie ticket can only be exchanged with an equal or higher priced ticket
+    /// @param _myTicketId Denotes the index of the movie ticket of the requesting account
+    /// @param _otherTicketID Denotes the index of the higher priced movie ticket that a ticket will be exchanged with
+    /// @notice ensures that the two supplied tickets are eligible for swap    
+    modifier checkSwappabilityOfTickets (uint256 _myTicketId, uint256 _otherTicketID) {        
+        // Only user with a lower ticket value can initiate transfer to avoid complications
+        require(movieTickets[_myTicketId-1].ticketPriceInWei &lt;= movieTickets[_otherTicketID-1].ticketPriceInWei, "Can only swap with a higher or equal priced ticket!");
+        _;
+    }
+&nbsp;
+    /// @dev buyMovieTicket function allows users to mint a movie ticket    
+    /// @param _movieId denotes the index of the movie (movieId) for which the ticket must be bought/minted
+    /// @notice allows users to buy a ticket as an NFT    
+    function buyMovieTicket ( uint8 _movieId ) public payable {
+        /// ensures that the movieId must be valid, 1 for Avengers, 2 for Starwars
+        require(_movieId &gt; 0 &amp;&amp; _movieId &lt;= 2, "Movie id must be valid");
+        /// ensures that the value of ether sent must be equal to the ticket price declared
+        require(msg.value == movieTicketPrices[_movieId], "Please pay correct amount for ticket");
+        /// creates a new object of MovieTicket type
+        MovieTicket memory _movieTicket = MovieTicket ({
+            ticketId : counterTicketId,
+            movieTitle : movieTitles[_movieId],
+            ticketPriceInWei: movieTicketPrices[_movieId],
+            ticketOwner: payable(msg.sender),            
+            validTillBlock: (block.number + 10), //Instead of using timestamp, assuming the number of blocks till which ticket is valid
+            isSwappable: false            
+        });
+        /// object is pushed to movie tickets array
+        movieTickets.push(_movieTicket);
+        /// the movie ticket is minted with ERC721 _safeMint function
+        _safeMint(msg.sender, counterTicketId);
+        /// event BoughtTickets emitted
+        emit BoughtTickets(msg.sender, counterTicketId);
+        /// counter increemented to store the index of next ticket
+        counterTicketId++;
+    }             
+&nbsp;
+    /// @dev makeTicketSwapable function allows an account address to make a ticket they own available for swapping with a lower-priced ticket    
+    /// @param _tokenId the index of the ticket that the owner wishes to list for swapping
+    /// @notice allows an owner to list their ticket for swapping with lower priced tickets
+    function makeTicketSwapable(uint256 _tokenId) public {
+        require(msg.sender == movieTickets[_tokenId-1].ticketOwner, "Only ticket owner can list token for swapping!");
+        movieTickets[_tokenId-1].isSwappable = true;
+    }
+&nbsp;
+    /// @dev findPriceDifference allows a user to check how much money they have to pay with for swapping with a higher priced ticket
+    /// guarded by:
+    ///      checkSwappabilityOfTickets modifer
+    /// @param _myTokenId the index of the lower priced ticket that an account wants to sell
+    /// @param _otherTokenID the index of the higher priced ticket that the account wants to exchange the lower priced ticket for
+    /// @return (uint256) returns the price difference of the two tickets
+    /// @notice allows a user to find how much they have to pay to exchange their ticket with another, higher priced ticket
+    function findPriceDifference (uint256 _myTokenId, uint256 _otherTokenID) external view 
+        checkSwappabilityOfTickets(_myTokenId, _otherTokenID) 
+    returns (uint256) {
+        return (movieTickets[_otherTokenID-1].ticketPriceInWei - movieTickets[_myTokenId-1].ticketPriceInWei);
+    }
+&nbsp;
+    /// @dev approveTransfer function enables the account with higher-priced ticket to allow another account having a lower-priced ticket to initiate a swap
+    ///      uses the approve method of Open Zepplin ERC721 standard
+    /// @param _recipient the address of the account owning the lower priced ticket
+    /// @param _tokenId the index of higher priced ticket owned by the account calling this function (approving trade)
+    /// @notice the owner of higher priced ticket approves a trade request from the account having a lower priced ticket
+    function approveTransfer (address _recipient, uint256 _tokenId) public {        
+        // ensures that the ticket is swappable
+        require(movieTickets[_tokenId-1].isSwappable, "The ticket should be listed for swapping");
+        approve(_recipient, _tokenId);
+    }
+&nbsp;
+    /// @dev function swapTicket changes the ticketOwner of the supplied tickets
+    /// guarded by:
+    ///      checkTicketValidity
+    ///      checkSwappabilityOfTickets
+    /// @param _recipient denotes owner account address of the higher priced ticket
+    /// @param _myTokenId denotes the index of the lower priced ticket, owned by request initiator account
+    /// @param _otherTokenID denotes the index of the higher priced ticket, owned by the _recipient account
+    /// @notice allows the owners of two tickets to swap them
+    function swapTicket (address _recipient, uint256 _myTokenId, uint256 _otherTokenID) public payable 
+        checkTicketValidity (_myTokenId)
+        checkTicketValidity(_otherTokenID)
+        checkSwappabilityOfTickets(_myTokenId, _otherTokenID)
+    {                
+        // Payment of the price difference must be provided by lower-priced ticket
+        require(msg.value == movieTickets[_otherTokenID-1].ticketPriceInWei - movieTickets[_myTokenId-1].ticketPriceInWei, "Please provide right payment for transfer");
+        
+        // Transfer sender ticket to receiver
+        transferFrom(msg.sender, _recipient, _myTokenId);     
+        movieTickets[_myTokenId-1].ticketOwner = _recipient;
+        // Transfer receiver ticket to sender
+        transferFrom(_recipient, msg.sender, _otherTokenID);
+        movieTickets[_otherTokenID-1].ticketOwner = msg.sender;
+        // Add the ether value to the recipient's balance
+        userEtherBalances[_recipient] += msg.value;
+        // Set isSwappable attribute of tickets false
+        movieTickets[_myTokenId-1].isSwappable = false;
+        movieTickets[_otherTokenID-1].isSwappable = false;
+        // emit the SwappedTickets event
+        emit SwappedTickets(msg.sender, _myTokenId, _recipient, _otherTokenID);
+    }
+    
+    /// @dev withdrawMyEtherBalance function allows a request sending account to withdraw their ether balance
+    /// emits the WithdrawBalance event on successful withdrawal
+    /// @notice allows a user who has some balance in their account to withdraw it
+    function withdrawMyEtherBalance () external payable {
+        // Ensures that the user is owed some ether
+        require(userEtherBalances[msg.sender] &gt; 0, "Nothing to withdraw");
+        // Set user balance to zero
+        uint256 _userEtherBalance = userEtherBalances[msg.sender];
+        userEtherBalances[msg.sender] = 0;
+        // Transfer balance to user
+        (bool sent, ) = (msg.sender).call{value: _userEtherBalance, gas:2300 }("");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(sent, "Failed to send Ether");
+        // Emit the withdrawl event
+        emit WithdrawBalance(msg.sender, _userEtherBalance);
+    }
+    
+    /// @dev getTicketInformation function provides the information for a given ticket index
+    /// @param _ticketIndex the index of the ticket for which information is being requested
+    /// @return an object of MovieTicket type having the information for the given ticket index
+    /// @notice provides all information about the ticket 
+    function getTicketInformation (uint256 _ticketIndex) public view returns (MovieTicket memory) {         
+         return movieTickets[_ticketIndex-1];
+    }
+&nbsp;
+    /// @dev getContractEtherBalance function returns the Ether balance of the contract
+    /// @return (uint256) ether in wei held in the contract address
+    /// @notice provides how much ether is in the contract account
+    function getContractEtherBalance () public view returns (uint256) {
+        return address(this).balance;
+    }
+&nbsp;
+    /// @dev getMyEtherBalance function returns the balance of msg.sender owed by the contract 
+    /// @return (uint256) ether in wei owed to msg.send by the contract address
+    /// @notice shows how much ether an owner has in the contract
+    function getMyEtherBalance () public view returns (uint256) {
+        return userEtherBalances[msg.sender];
+    }
+} /// @dev movieTicketNFT contract definition ends here
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Apr 02 2022 05:33:35 GMT-0400 (Eastern Daylight Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
